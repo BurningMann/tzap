@@ -1,0 +1,62 @@
+.header{
+  background: $black;
+
+  &__top {
+    padding: 1rem 0;
+    .region {
+      color: #fff;
+      letter-spacing: 0.02em;
+      font-weight: 600;
+      cursor: pointer;
+
+      &__main {
+        display: flex;
+        align-items: center;
+
+        .arrow {
+          width: 15px;
+          height: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: rotate(90deg);
+          transition: .3s;
+          
+          margin-left: .4rem;
+
+          path {
+            fill: $yellow;
+          }
+        }
+
+        &.active {
+          .arrow {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+
+      &__drop {
+        position: relative;
+        left: 1.7rem;
+        padding-top: .2rem;
+        display: none;
+
+        &-item {
+          color: #fff;
+          display: block;
+          width: 100%;
+        }
+      }
+
+      &-name {
+        border-bottom: 2px dashed $yellow;
+      }
+
+      &-icon {
+        margin-right: .2rem;
+      }
+      
+    }
+  }
+}
