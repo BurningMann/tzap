@@ -6,50 +6,120 @@
   bottom: 0;
   right: 0;
   z-index: 9999;
-  background: #E5E5E5;
-  padding: 80px 60px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #000 #eee;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  &::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-    background: #eee;
-  }
-  &::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    background-color: #000;
-  }
+  background: rgba(0, 0, 0, 0.6);
+  padding: 80px 60px 20px;
 
   &__wrapper{
     width: 100%;
     height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: auto;
   }
 
+  /* &.login_popup {
+    .popup__wrapper {
+      align-items: center;
+    }
+  } */
+
   &__close{
-    width: 64px;
-    height: 64px;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    top: 40px;
-    right: 40px;
+    top: 10px;
+    right: 10px;
     z-index: 50;
     border-radius: 50%;
-    background: url(../img/icons/popup-cross.svg) center no-repeat, #fff;
+    background: url(../img/icons/icon-popup-cross.svg) center no-repeat;
     cursor: pointer;
   }
 
+  &__content {
+    background: #fff;
+    padding: 30px 50px;
+    width: 100%;
+    position: relative;
+
+    &.hidden {
+      display: none;
+    }
+
+    &.login-content {
+      max-width: 390px;
+    }
+
+    &.registration-content {
+      max-width: 600px;
+      
+
+      .registration-form {
+        .columns-wrapper {
+          display: flex;
+          gap: 0 10px;
+
+          @media screen and (max-width:600px) {
+            flex-wrap: wrap;
+          }
+
+          .inputs-column {
+            width: 50%;
+
+            @media screen and (max-width: 600px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .tab_section__content_tab  {
+        padding: 20px 0 0 0;
+      }
+
+      .tab_section__tab_container {
+        padding: 10px 0;
+      }
+
+      .tab_section__tab {
+        color: $lightGray;
+        font-weight: normal;
+        width: 50%;
+        justify-content: center;
+      }
+
+      .tab_section__tab.active {
+        color: $green;
+
+        &:before {
+          background: $green;
+        }
+      }
+    }
+  }
+
+  .section__title {
+    margin-bottom: 20px;
+  }
 }
 
+.form-switch {
+  text-align: center;
+  font-weight: 300;
+  color: $green;
+  cursor: pointer;
+  margin-top: 10px;
+}
 @media screen and (max-width: 500px) {
   .popup{
-    padding: 80px 20px;
-  }
-  .popup__close{
-    width: 46px;
-    height: 46px;
-    background-size: 12px 12px;
-    top: 30px;
-    right: 20px;
+    padding: 60px 20px 10px;
+
+    &__content {
+      padding: 20px 20px;
+
+      .tab_section__tab {
+        font-size: 14px;
+      }
+    }
   }
 }

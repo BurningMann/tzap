@@ -4,50 +4,29 @@
   <body>
     @@include('./partials/header.html')
 
-    <main>
-
-      <div class="main-banner">
-        <div class="main-banner__picture">
-          <img src="./img/main-banner.png" alt="" class="fit">
-        </div>
-        <div class="main-banner__content">
-          <div class="main-banner__content-text">Для всех всегда <br>горит зелёный</div>
-          <a href="#" class="main-banner__content-button no-hover">Подробнее</a>
-        </div>
-      </div>
-
+    <main class="page">
       <div class="section">
         <div class="container">
-          <div class="main-page-map">
-            <div class="main-page-map__sidebar">
-              <div class="section__title">Наши магазины</div>
+          <div class="breadcrumbs">
+            <a href="/" class="breadcrumbs__crumb no-hover">Главная</a>
+            <a href="/" class="breadcrumbs__crumb no-hover">Каталог товаров</a>
+            <a href="/" class="breadcrumbs__crumb no-hover">Запчасти отечественные</a>
+            <a href="/" class="breadcrumbs__crumb no-hover">Тормозная аппаратура</a>
+            <a href="#content" class="breadcrumbs__crumb no-hover last">Тормозная</a>
+          </div>
 
-              <div class="main-page-map__sidebar-box">
-                <div class="title">Автозапчасти на Малиновке</div>
-                <div class="adress">г. Москва, ул. Западная, Восточный рынок, бокс 14</div>
-                <a href="tel:+71073042588" class="phone no-hover">+7 10 73042588</a>
-              </div>
-              <div class="main-page-map__sidebar-box">
-                <div class="title">Магазин Автозапчасти</div>
-                <div class="adress">г. Москва, ул. Восточная Денисовкая, 16 Вход со двора</div>
-                <a href="tel:+71073042588" class="phone no-hover">+7 10 73042588</a>
-              </div>
-              <div class="main-page-map__sidebar-box">
-                <div class="title">Автозапчасти на Зорьковской</div>
-                <div class="adress">г. Москва, ул. Сухоцветов, 189 оф. 45 Вход через турникеты</div>
-                <a href="tel:+71073042588" class="phone no-hover">+7 10 73042588</a>
-              </div>
-            </div>
-            <div class="main-page-map__map">
-              <img src="./img/main-page-map.png" alt="" class="fit">
+          <h1 class="h1 page__title">Каталог товаров</h1>
+          
+          <div class="catalog-sort-section">
+            <div class="catalog-sort">
+              Сортировать
+              <select name="" class="input">
+                <option value="popularity " selected>по популярности</option>
+                <option value="price">по цене</option>
+              </select>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="section">
-        <div class="container">
-          <div class="section__title">Каталог</div>
           <div class="catalog">
             <a href="#" class="catalog__category">
               <div class="catalog__category-image">
@@ -124,10 +103,6 @@
           </div>
         </div>
       </div>
-
-
-      @@include('./partials/hits.html')
-      @@include('./partials/news.html')
 
       <div class="section">
         <div class="container">

@@ -2,14 +2,15 @@
   <div class="container">
     <div class="header__top">
       <div class="region">
-        <div class="region__main">
-          <img src="./img/icons/icon-map-marker-small.svg" class="region-icon">
-          <div class="region-name">Москва</div>
+        <img src="./img/icons/icon-map-marker-small.svg" class="region-icon">
+        <div class="drop-box">
+          <div class="name">Москва</div>
           <div class="arrow">@@include('./assets/img/icons/icon-list-arrow.svg')</div>
-        </div>
-        <div class="region__drop">
-          <a href="#" class="region__drop-item">Москва</a>
-          <a href="#" class="region__drop-item">Москва</a>
+
+          <div class="region__drop drop-box__drop">
+            <a href="#" class="drop-box__drop-item">Казахстан</a>
+            <a href="#" class="drop-box__drop-item">Беларусь</a>
+          </div>
         </div>
       </div>
       <div class="additional-menu">
@@ -21,8 +22,61 @@
         <a href="#" class="additional-menu_item">Список магазинов</a>
         <a href="#" class="additional-menu_item">Документы</a>
       </div>
-      <div class="phones"></div>
+      <div class="phones">
+        <img src="./img/icons/icon-phone.svg" class="phones-icon">
+        <div class="drop-box">
+          <div class="name">+7 10 73042588</div>
+          <div class="arrow">@@include('./assets/img/icons/icon-list-arrow.svg')</div>
+
+          <div class="region__drop drop-box__drop">
+            <a href="tel:+71073042588" class="drop-box__drop-item">+7 10 73042588</a>
+            <a href="tel:+71073042588" class="drop-box__drop-item">+7 10 73042588</a>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="header__main">
+      <a href="/" class="logo">
+        <img src="./img/logo.png">
+      </a>
+
+      <div class="center">
+        <div class="btn catalog-btn">
+          <img src="./img/icons/icon-burger.svg" alt="">
+          <span>Каталог товаров</span>
+          <div class="arrow">@@include('./assets/img/icons/icon-list-arrow.svg')</div>
+        </div>
+        <form action="#" class="search">
+          <input type="text" placeholder="Поиск по наименованию или артикулу">
+          <button type="submit"><img src="./img/icons/icon-loupe.svg" alt=""></button>
+        </form>
+      </div>
+
+      <div class="uth-bar">
+        <a href="#" class="uth-bar__item uth-bar__favorite">
+          <div class="label">4</div>
+          <img src="./img/icons/icon-heart.svg" alt="">
+        </a>
+        <a href="#" class="uth-bar__item uth-bar__cart">
+          <div class="label">2</div>
+          <img src="./img/icons/icon-cart.svg" alt="">
+        </a>
+        <div class="uth-bar__item uth-bar__login" data-popup="login">
+          <img src="./img/icons/icon-personal.svg" alt="">
+        </div>
+      </div>
+
+      <div class="burger">
+        <div class="burger__btn">
+          <img src="./img/icons/icon-burger.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+    @@include('./partials/main-menu.html')
+    
   </div>
   
 </header> 
+<div class="mobile-menu-bg"></div>
+@@include('./partials/main-menu-mobile.html')
