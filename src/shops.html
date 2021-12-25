@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('./partials/head.html')
+  <body>
+    @@include('./partials/header.html')
+
+    <main class="page">
+      <div class="section">
+        <div class="container">
+          <div class="breadcrumbs">
+            <a href="/" class="breadcrumbs__crumb no-hover">Главная</a>
+            <a href="/" class="breadcrumbs__crumb no-hover">Список магазинов</a>
+          </div>
+
+          <h1 class="h1 page__title">Список магазинов</h1>
+
+          <div class="shops-map">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A92b4a49d0610dc8c4ff4fb1b7e479abad02f4fcd7b15942128ff87a0a5345040&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true myMap.behaviors.disable('scrollZoom');"></script>
+          </div>
+         
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="section__title">Наши магазины</div>
+
+          <div class="shops-wrapper">
+            <div class="main-page-map__sidebar-box">
+              <div class="title">Автозапчасти на Малиновке</div>
+              <div class="adress">г. Москва, ул. Западная, Восточный рынок, бокс 14</div>
+              <a href="tel:+71073042588" class="phone no-hover">+7 10 73042588</a>
+            </div>
+            <div class="main-page-map__sidebar-box">
+              <div class="title">Магазин Автозапчасти</div>
+              <div class="adress">г. Москва, ул. Восточная Денисовкая, 16 Вход со двора</div>
+              <a href="tel:+71073042588" class="phone no-hover">+7 10 73042588</a>
+            </div>
+            <div class="main-page-map__sidebar-box">
+              <div class="title">Автозапчасти на Зорьковской</div>
+              <div class="adress">г. Москва, ул. Сухоцветов, 189 оф. 45 Вход через турникеты</div>
+              <a href="tel:+71073042588" class="phone no-hover">+7 10 73042588</a>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+
+    </main>
+    @@include('./partials/footer.html')
+  </body>
+</html>
+
+

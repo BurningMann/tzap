@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('./partials/head.html')
+  <body>
+    @@include('./partials/header.html')
+
+    <main class="page">
+      <div class="section">
+        <div class="container">
+          <div class="breadcrumbs">
+            <a href="/" class="breadcrumbs__crumb no-hover">Главная</a>
+            <a href="/" class="breadcrumbs__crumb no-hover">Список магазинов</a>
+          </div>
+
+          <h1 class="h1 page__title">Контакты</h1>
+
+          <div class="main-page-map with-map">
+            <div class="main-page-map__sidebar">
+              <div class="section__title">Наши магазины</div>
+
+              <div class="main-page-map__sidebar-box active" data-adress="adress-1">
+                <div class="title">Автозапчасти на Малиновке</div>
+                <div class="adress">г. Москва, ул. Западная, Восточный рынок, бокс 14</div>
+                <a href="tel:+71073042588" class="phone no-hover">+7 10 73042588</a>
+              </div>
+
+              <div class="main-page-map__sidebar-box" data-adress="adress-2">
+                <div class="title">Магазин Автозапчасти</div>
+                <div class="adress">г. Москва, ул. Восточная Денисовкая, 16 Вход со двора</div>
+                <a href="tel:+71073042588" class="phone no-hover">+7 10 73042588</a>
+              </div>
+
+              <div class="main-page-map__sidebar-box" data-adress="adress-3">
+                <div class="title">Автозапчасти на Зорьковской</div>
+                <div class="adress">г. Москва, ул. Сухоцветов, 189 оф. 45 Вход через турникеты</div>
+                <a href="tel:+71073042588" class="phone no-hover">+7 10 73042588</a>
+              </div>
+            </div>
+            <div class="main-page-map__map">
+
+              <div class="main-page-map__map-adress adress-1 active">
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A495a77f3116732388bd539510aeb2673fa87b717e1a91c15913c1dace2d2a71f&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true myMap.behaviors.disable('scrollZoom');"></script>
+              </div>
+              <div class="main-page-map__map-adress adress-2">
+                <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ac3743c5c4f0b6e272d78aadecbb15d40261acf3cb9fe92ab59022f39ca20d168&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true myMap.behaviors.disable('scrollZoom');"></script>
+              </div>
+              <div class="main-page-map__map-adress adress-3">
+                <img src="./img/main-page-map.png" alt="" class="fit">
+              </div>
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="section__title">Обратите внимание!</div>
+          <div class="page-description">            
+            <p>Наши магазины работают каждый день, но время от времни мы делаем выходные и дни переучёта, об этом отдельно сообщается в разделе Новости. Запчасти б/у. В этом случае можно пойти на авторынок и попытаться найти детали с разобранного аналогичного авто, но здесь возникает много подводных камней: деталь уже могла подвергаться ремонту, а следы износа удачно «загримированы». Впрочем, не исключена покупка действительно оригинальной запчасти в приличном состоянии. </p>
+            <p>При покупке мотора или коробки передач автовладелец должен предоставить маркировку, которая выбита на самой детали. При покупке любой электронной запчасти или блока управления нужно предоставлять оригинальный номер запчасти. Есть нюанс: на некоторых иномарках блок управления имеет свою программу с дополнительным номером прошивки, поэтому нужно уточнять у автомобильного мастера, нужен ли этот номер. Если предполагается кузовной ремонт автомобиля, то нужно точно знать модель транспортного средства. При покупке автозапчастей в интернет магазине можно предоставить фото оригинальной запчасти.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="container">
+          <div class="section__title">Оставьте вопрос - и менеджер ответит вам в ближайшее время</div>
+
+          <form action="#" class="question-form">
+            <div class="input-box w-3">
+              <input type="text" class="input" placeholder="ФИО" required>
+            </div>
+            <div class="input-box w-3">
+              <input type="text" class="input" placeholder="Телефон" required>
+            </div>
+            <div class="input-box w-3">
+              <input type="text" class="input" placeholder="Email" required>
+            </div>
+            <div class="input-box">
+              <textarea class="text-area" placeholder="Сообщение"></textarea>
+            </div>
+            <div class="input-box">
+              <label class="file-label">
+                <input type="file" class="file">
+                <div class="fileicon"><img src="./img/icons/icon-file.svg" alt=""></div>
+                <div class="file-name">Прикрепить файл (до 5 файлов размером до 2MB)</div>
+              </label>
+            </div>
+          
+            <button type="submit" class="btn">Отправить</button>
+            
+          </form>
+        </div>
+      </div>
+    </main>
+    @@include('./partials/footer.html')
+  </body>
+</html>
+
+

@@ -1,12 +1,17 @@
 .catalog-sort-section {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 17px;
 
-
+  &.with-counter {
+    justify-content: space-between;
+  }
 
   .catalog-sort {
     display: flex;
     align-items: center;
+    font-weight: 300;
 
     @media screen and (max-width:500px) {
       align-items: flex-start;
@@ -22,6 +27,16 @@
         margin: 10px 0 0;
         width: 100%;
       }
+    }
+  }
+
+  .products-count {
+    font-size: 22px;
+    line-height: 33px;
+    opacity: 0.7;
+
+    @media screen and (max-width:600px) {
+      display: none;
     }
   }
 }
@@ -119,6 +134,7 @@
       width: 25px;
       height: 25px;
       cursor: pointer;
+      z-index: 20;
 
       img {
         position: absolute;
@@ -249,6 +265,331 @@
           margin: 0 auto;
         }
       }
+    }
+  }
+}
+
+.catalog-page {
+  display: flex;
+
+  @media screen and (max-width:1200px) {
+    flex-wrap: wrap;
+  }
+
+  .filter-sidebar {
+    width: 285px;
+    flex-shrink: 0;
+    margin-right: 10px;
+
+    @media screen and (max-width:1200px) {
+      width: 100%;
+    }
+  }
+
+  .main-catalog {
+    .catalog {
+      &__product {
+        width: calc(100% / 3 - 10px);
+
+        @media screen and (max-width:1200px) {
+          width: calc(100% / 2 - 10px);
+        }
+        
+        @media screen and (max-width:1200px) {
+          width: calc(100% / 2 - 10px);
+        }
+
+        @media screen and (max-width:620px) {
+          width: 100%;
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+}
+
+.catalog-menu {
+
+  @media screen and (max-width:1200px) {
+    display: none;
+  }
+
+  &__item {
+    background: $grayBack;
+    margin: 2px 0;
+
+    .main-category {
+      background: $grayBack;
+      padding: 13px 13px 16px 13px;
+      font-size: 18px;
+      line-height: 22px;
+      transition: .3s;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+      transition: .3s;
+      border-radius: 3px;
+
+      svg {
+        position: absolute;
+        right: 20px;
+        transform: rotate(90deg);
+        transition: .3s;
+
+        path {
+          fill: $black;
+          transition: .3s;
+        }
+      }
+
+      &.active {
+        background: $black;
+        color: $yellow;
+
+        svg {
+          transform: rotate(-90deg);
+  
+          path {
+            fill: $yellow;
+          }
+        }
+      }
+    }
+
+    .catalog-sub-menu {
+      padding: 6px 13px;
+      background: $grayBack;
+      border-right: 1px solid $lightGray;
+      border-left: 1px solid $lightGray;
+      border-bottom: 1px solid $lightGray;
+      border-radius: 0 0 3px 3px;
+      display: none;
+
+      &__item {
+        margin: 10px 0;
+      }
+
+      .category-name {
+        font-weight: 300;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: .3s;
+
+        &::before {
+          content: "";
+          width: 18px;
+          height: 18px;
+          display: block;
+          background: url(../img/icons/icon-list-arrow-green.svg) center no-repeat;
+          margin-right:  5px;
+          transition: .3s;
+        }
+
+        &.active {
+          color: $lightGreen;
+          font-weight: 600;
+
+          &::before {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
+
+    .category-sub-menu-level-2 {
+      padding: 10px 20px;
+      display: none;
+
+      a {
+        color: rgba(58, 58, 58, .6);
+        font-weight: 300;
+        margin: 10px 0;
+        display: block;
+        
+
+        &:hover {
+          color: $lightGreen !important;
+        }
+      }
+    }
+  }
+}
+
+.catalog-filter-wrapper {
+  margin-bottom: 10px;
+}
+
+.catalog-filter {
+  border: 1px solid $lightGray;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 0 0 16px;
+
+  @media screen and (max-width:1200px) {
+    display: none;
+  }
+
+  &__item {
+    padding: 16px;
+    border-bottom: 1px solid $lightGray;
+
+    &:last-child {
+      border: none;
+    }
+
+    &-head {
+      position: relative;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      svg {
+        position: absolute;
+        right: 4px;
+        transform: rotate(90deg);
+        transition: .3s;
+
+        path {
+          fill: $black;
+          transition: .3s;
+        }
+      }
+
+      &.active {
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    &-body {
+      padding: 16px 0 0;
+    }
+  }
+
+  .check-box-container {
+    &__item {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+      margin: 10px 0;
+      font-weight: 300;
+      
+      .check {
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        border: 1px solid $lightGray;
+        margin-right: 7px;
+      }
+
+      input {
+        display: none;
+        font-weight: 300;
+
+        &:checked {
+          +.check {
+            background: url(../img/icons/icon-checkbox.svg) center no-repeat; 
+          }
+        }
+      }
+    }
+  }
+
+  .filter-buttons-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+
+    &__btn {
+      width: 100%;
+      max-width: 120px;
+      height: 43px;
+      border-radius: 3px;
+    }
+
+    .apply {
+      background: $yellow;
+    }
+
+    .abort {
+
+    }
+  }
+}
+
+.filter-mobile-opener {
+  border: 1px solid $lightGray;
+  padding: 8px 13px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @media screen and (min-width:1200px) {
+    display: none;
+  }
+  
+
+  svg {
+    position: absolute;
+    right: 20px;
+    transform: rotate(90deg);
+    transition: .3s;
+
+    path {
+      fill: $black;
+      transition: .3s;
+    }
+  }
+
+  &.active {
+    svg {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+.pagintaion {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+
+  @media screen and (max-width:500px) {
+    justify-content: center;
+  }
+
+  &__item {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $grayBack;
+    border-radius: 3px;
+    margin: 0 1px;
+    transition: .3s;
+    flex-shrink: 0;
+
+    @media screen and (max-width:500px) {
+      width: 30px;
+      height: 30px;
+      font-size: 14px;
+    }
+
+    &.active, 
+    &:hover {
+      background: $yellow;
+    }
+
+    &--prev  {
+      transform: rotate(90deg);
+    }
+
+    &--next  {
+      transform: rotate(-90deg);
     }
   }
 }

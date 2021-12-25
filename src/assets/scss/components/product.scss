@@ -1,0 +1,259 @@
+.product-page {
+  padding-top: 40px;
+
+  @media screen and (max-width:500px) {
+    padding-top: 10px;
+  }
+
+  .product-main {
+    display: flex;
+
+    @media screen and (max-width:1024px) {
+      flex-direction: column;
+    }
+  }
+
+  .product-slider {
+    width: 50%;
+    border: 1px solid $lightGray;
+    position: relative;
+
+    @media screen and (max-width:1024px) {
+      width: 100%;
+      border: none;
+      margin-bottom: 20px;
+    }
+    
+    .slider {
+      width: 100%;
+      height: 570px;
+      padding: 120px 50px 80px;
+      position: relative;
+
+      @media screen and (max-width:500px) {
+        height: auto;
+        padding: 60px 0 20px;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .prev {
+        left: -40px;
+
+        @media screen and (max-width:1260px) {
+          left: 0;
+        }
+      }
+
+      .next {
+        right: -40px;
+
+        @media screen and (max-width:1260px) {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .product-info {
+    padding: 0 0 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width:1024px) {
+      padding: 0;
+    }
+
+    .articul {
+      width: 100%;
+      opacity: 0.4;
+      margin-bottom: 15px;
+
+      @media screen and (max-width:500px) {
+        text-align: center;
+      }
+    }
+
+    .price {
+      width: 100%;
+      font-size: 32px;
+      line-height: 47px;
+      color: $lightGreen;
+      margin-bottom: 50px;
+
+      @media screen and (max-width:500px) {
+        margin: 0 0 10px 0;
+        text-align: center;
+      }
+    }
+
+    .cart-line{
+      width: 100%;
+      display: flex;
+
+      .counter {
+        margin-right: 40px;
+
+        @media screen and (max-width:500px) {
+          margin: 0 0 10px 0;
+        } 
+      }
+
+      .btn {
+        justify-content: center;
+        width: 100%;
+        max-width: 225px;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+
+      @media screen and (max-width:500px) {
+        flex-direction: column;
+        align-items: center;
+      }  
+    }
+  }
+}
+
+.product-tabs {
+  margin-top: 60px;
+
+  .tab_section__tab_container {
+    justify-content: center;
+    padding: 10px 0;
+
+    @media screen and (max-width:400px) {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      justify-content: flex-start;
+    }
+  }
+
+  .tab_section__tab {
+    color: $lightGray;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 0 20px;
+    margin: 0 20px;
+
+    @media screen and (max-width:500px) {
+      font-size: 14px;
+      padding: 0 5px;
+      margin: 0 5px;
+    }
+    
+    &.active {
+      font-size: 28px;
+      color: $green;
+
+      @media screen and (max-width:500px) {
+        font-size: 18px;
+      } 
+    }
+  }
+
+  .tab_section__content_tab {
+    padding: 20px 0 0;
+  }
+}
+
+.product-characteristics {
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid $grayBack;
+    margin: 10px 0;
+
+    > div {
+      padding: 10px 20px;
+    }
+
+    .characteristic-name {
+      width: 50%;
+      color: $lightBlack;
+    }
+    .characteristic-data {
+      width: 50%;
+      background: $grayBack;
+    }
+  }
+}
+
+.viewed-products {
+  display: flex;
+  margin: 0 -10px;
+
+  @media screen and (max-width:1250px) {
+    padding-bottom: 20px;
+  }
+
+  .slick-list {
+    width: 100%;
+  }
+
+  .slick-dots {
+    top: 100%;
+  }
+
+  &__item {
+    width: calc(100% / 4);
+    margin: 0 10px;
+    border: 1px solid $lightGray;
+    border-radius: 3px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 200px;
+
+    &-content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(255,255,255,.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      opacity: 0;
+      transition: .3s;
+
+      @media screen and (max-width:780px) {
+        opacity: 1;
+      }
+
+      .articul {
+        opacity: 0.4;
+        font-size: 15px;
+        line-height: 22px;
+      }
+
+      .name {
+        font-size: 18px;
+        line-height: 24px;
+      }
+    }
+
+    &:hover {
+      border-color: $green;
+
+      .viewed-products__item-content {
+        opacity: 1;
+      }
+    }
+  }
+}

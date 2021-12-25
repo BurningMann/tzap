@@ -101,6 +101,43 @@ window.onload = function(){
     }
   })
 
+  $('.catalog-menu .main-category').click(function(){
+    $(this).toggleClass('active')
+    $(this).siblings('.catalog-sub-menu').slideToggle()
+  })
+
+  $('.catalog-sub-menu .category-name').click(function(){
+    $(this).toggleClass('active')
+    $(this).siblings('.category-sub-menu-level-2').slideToggle()
+  })
+
+  $('.catalog-filter__item-head').click(function(){
+    $(this).toggleClass('active')
+    $(this).siblings('.catalog-filter__item-body').slideToggle()
+  })
+
+
+  $('.filter-mobile-opener').click(function(){
+    $(this).toggleClass('active')
+    $(this).siblings('.catalog-filter').slideToggle()
+  })
+
+  $('.vacancy__item-header').click(function(){
+    $(this).toggleClass('active')
+    $(this).siblings('.vacancy__item-body').slideToggle()
+  })
+  
+  $('.main-page-map.with-map .main-page-map__sidebar-box').click(function(){
+    $('.main-page-map.with-map .main-page-map__sidebar-box.active').removeClass('active')
+    $(this).addClass('active')
+
+    let adress = $(this).data('adress') 
+    $('.main-page-map__map-adress.active').removeClass('active')
+
+    $(`.${adress}`).addClass('active')
+  })
+
+
   /* POPUPS */
   $('[data-popup]').click(function(){
     let popup = $(this).data('popup')
@@ -123,6 +160,20 @@ window.onload = function(){
     $('.login-content').removeClass('hidden')
     $('.registration-content').addClass('hidden')
   })
+
+  /* File load script */
+
+  $('.file-label .file').change(function(EO){
+    var files = EO.target.files || EO.dataTransfer.files;
+    if (!files.length){
+      return;
+    }
+
+    $(EO.target).siblings('.file-name').text(EO.target.files[0].name)
+  })
+
+
+
 
   $('.catalog--hits').slick({
     slidesToShow: 4,
@@ -193,6 +244,87 @@ window.onload = function(){
           slidesToShow: 1,
         }
       },
+    ]
+  })
+
+  
+  $('.product-slider .slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    prevArrow: `
+    <div class="prev">
+      <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.7503 8.25L11.8115 10.1887L18.109 16.5L11.8115 22.8112L13.7503 24.75L22.0003 16.5L13.7503 8.25Z" fill="#BEBEBE"/>
+      </svg>
+    </div>
+    `,
+    nextArrow:`
+    <div class="next">
+      <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.7503 8.25L11.8115 10.1887L18.109 16.5L11.8115 22.8112L13.7503 24.75L22.0003 16.5L13.7503 8.25Z" fill="#BEBEBE"/>
+      </svg>
+    </div>
+    `,
+    responsive: [
+      {
+        breakpoint: 500,
+        settings: {
+          arrows: false,
+          dots: true
+        }
+      }
+    ]
+  })
+
+  $('.viewed-products').slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    prevArrow: `
+    <div class="prev">
+      <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.7503 8.25L11.8115 10.1887L18.109 16.5L11.8115 22.8112L13.7503 24.75L22.0003 16.5L13.7503 8.25Z" fill="#BEBEBE"/>
+      </svg>
+    </div>
+    `,
+    nextArrow:`
+    <div class="next">
+      <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13.7503 8.25L11.8115 10.1887L18.109 16.5L11.8115 22.8112L13.7503 24.75L22.0003 16.5L13.7503 8.25Z" fill="#BEBEBE"/>
+      </svg>
+    </div>
+    `,
+    responsive: [
+      {
+        breakpoint: 1250,
+        settings: {
+          arrows: false,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          arrows: false,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 400,
+        settings: {
+          slidesToShow: 1,
+          arrows: false,
+          dots: true
+        }
+      }
     ]
   })
 

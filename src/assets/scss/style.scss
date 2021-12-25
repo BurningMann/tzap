@@ -17,7 +17,6 @@ $red: #BE3030;
 
 html {
   width: 100%;
-  max-width: 1980px;
   margin: 0 auto;
   min-height: max-content;
 
@@ -66,8 +65,6 @@ p {
 
 a {
   transition: .3s;
-
-  
 
   &:not(.no-hover):hover {
     color: $yellow !important;
@@ -219,7 +216,7 @@ img,video {
 
 .slick-dots {
   position: absolute;
-  top: calc(100% + 40px);
+  top: calc(100% );
   left: 0;
   width: 100%;
   display: flex;
@@ -249,6 +246,7 @@ img[data-lazysrc] {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   will-change: transform;
+
   &.load{
     transition: 2s;
     opacity: 1;
@@ -345,6 +343,7 @@ form {
     margin: 10px 0;
     display: flex;
     align-items: center;
+    width: 100%;
 
     &:last-of-type {
       margin-bottom: 0;
@@ -383,6 +382,45 @@ form {
   }
 }
 
+.text-area {
+  background: $grayBack;
+  border: none;
+  border-radius: 3px;
+  color: $black;
+  padding: 20px;
+  font-weight: 300;
+  width: 100%;
+  resize: none;
+  height: 140px;
+
+  &::placeholder {
+    color: rgba(58, 58, 58, .6);
+  }
+}
+
+.file-label {
+  border-radius: 3px;
+  background: $grayBack;
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px dashed $lightGray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+
+  .file-name {
+    font-weight: 300;
+    opacity: 0.5;
+    margin-top: 5px;
+    text-align: center;
+  }
+
+  input {
+    display: none;
+  }
+}
+
 select {
   appearance: none;
   background: url(../img/icons/icon-select-arrow.svg) no-repeat 95% 50% $grayBack !important;
@@ -404,6 +442,10 @@ option {
 .section {
   width: 100%;
   margin-bottom: 60px;
+
+  @media screen and (max-width:500px) {
+    margin-bottom: 30px;
+  }
 
   &__title {
     color: $green;
@@ -536,6 +578,10 @@ option {
   }
 }
 
+
+.fancybox__thumbs, .fancybox__button--thumbs, .fancybox__button--fullscreen, .fancybox__button--slideshow,.fancybox__toolbar__items--left {
+  display: none
+}
 /* END common styles */
 
 @import './components/header.scss';
@@ -545,3 +591,4 @@ option {
 
 @import './components/main-page.scss';
 @import './components/catalog.scss';
+@import './components/product.scss';
