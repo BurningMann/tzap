@@ -108,6 +108,11 @@
     margin: 5px;
     border: 1px solid $lightGray;
     width: calc(100% / 4 - 20px);
+    transition: .3s;
+
+    &:hover {
+      border-color: $green;
+    }
 
     &-tags{
       display: flex;
@@ -394,9 +399,11 @@
           &::before {
             transform: rotate(90deg);
           }
+
         }
       }
     }
+
 
     .category-sub-menu-level-2 {
       padding: 10px 20px;
@@ -408,7 +415,7 @@
         margin: 10px 0;
         display: block;
         
-
+        &.active,
         &:hover {
           color: $lightGreen !important;
         }
@@ -509,14 +516,21 @@
       max-width: 120px;
       height: 43px;
       border-radius: 3px;
+      transition: .3s;
+
+      &:hover {
+        background: $lightGreen;
+        color: #fff;
+      }
     }
 
     .apply {
       background: $yellow;
-    }
 
-    .abort {
-
+      &:hover {
+        background: $lightGreen;
+        color: #fff;
+      }
     }
   }
 }

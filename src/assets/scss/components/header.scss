@@ -27,6 +27,14 @@
       @media screen and (max-width:1024px) {
         display: none;
       }
+
+      &__drop {
+        width: max-content;
+
+        .drop-box__drop-item {
+          margin-bottom: 5px;
+        }
+      }
     }
 
     .additional-menu {
@@ -56,6 +64,7 @@
       flex-shrink: 0;
       display: flex;
       align-items: center;
+      padding-bottom: 10px;
 
       @media screen and (max-width:1024px) {
         width: 60px;
@@ -117,6 +126,7 @@
         left: 10px;
         height: 24px;
         margin: 0;
+        width: 30px;
       }
     }
 
@@ -321,13 +331,25 @@
       display: flex;
       justify-content: center;
       gap: 0 20px;
-      /* flex-direction: column; */
       margin-top: 30px;
 
       a {
         color: #fff;
         margin: 5px 0;
         border-bottom: 1px dashed $yellow;
+      }
+    }
+
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      text-align: center;
+      gap: 10px 0;
+      margin-top: 10px;
+
+      a {
+        color: #fff;
       }
     }
 

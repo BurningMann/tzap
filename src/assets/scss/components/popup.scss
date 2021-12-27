@@ -18,12 +18,6 @@
     overflow: auto;
   }
 
-  /* &.login_popup {
-    .popup__wrapper {
-      align-items: center;
-    }
-  } */
-
   &__close{
     width: 20px;
     height: 20px;
@@ -34,6 +28,12 @@
     border-radius: 50%;
     background: url(../img/icons/icon-popup-cross.svg) center no-repeat;
     cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      transform: scale(1.1);
+      background: url(../img/icons/icon-popup-cross-hover.svg) center no-repeat;
+    }
   }
 
   &__content {

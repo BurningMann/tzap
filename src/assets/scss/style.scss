@@ -398,28 +398,42 @@ form {
   }
 }
 
-.file-label {
+.file-box {
   border-radius: 3px;
   background: $grayBack;
   width: 100%;
   padding: 13px 16px;
   border: 1px dashed $lightGray;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
+  
+  .file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
 
-  .file-name {
-    font-weight: 300;
-    opacity: 0.5;
-    margin-top: 5px;
-    text-align: center;
+    .file-name {
+      font-weight: 300;
+      opacity: 0.5;
+      margin-top: 5px;
+      text-align: center;
+    }
+  
+    input {
+      display: none;
+    }
   }
 
-  input {
+  .dell-file {
+    font-size: 12px;
+    text-decoration: underline;
+    margin-top: 10px;
+    z-index: 20;
     display: none;
+    text-align: center;
+    cursor: pointer;
   }
 }
+
 
 select {
   appearance: none;
@@ -505,7 +519,18 @@ option {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    input {
+      border: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      color: $green;
+    }
   }
+
+  
 }
 
 .breadcrumbs {
